@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag nimeshf/test:$(date +%s)
+      run: docker build . --file Dockerfile --tag nimeshf/test:latest
     - name: push image with tag pakaya
       run: docker login -u nimeshf -p ${{ secrets.DOCKER_TOKEN }} && docker push nimeshf/test:latest
